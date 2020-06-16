@@ -11,8 +11,25 @@
 
     <div class="contenedor">
       <h1>Aprendiendo PHP</h1>
-      <?php var_dump($_POST)?>       
-    </div>
+      <?php
+      $nombre =  $_POST["nombre"];
+      $apellido =  $_POST["apellido"];
+
+      // valindando el campo del nombre
+      if(!(filter_has_var(INPUT_POST,"nombre") &&
+            (strlen(filter_input(INPUT_POST,"nombre")))>0)){
+        echo "el nombre es obligatorio";
+      } else {
+        echo "<p>Nombre: ". $nombre ." </p>";
+      }
+      //validando el apellido 
+      if(!isset($apellido) || trim($apellido) != ""){
+        echo "<p>Apellido ". $apellido ."</p>";
+      } else {
+        echo "el apellido es obligatorio";
+      }
+      ?>
+      </div>
 
 
 
