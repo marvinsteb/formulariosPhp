@@ -14,10 +14,10 @@
       <?php
       $nombre =  $_POST["nombre"];
       $apellido =  $_POST["apellido"];
-
       // valindando el campo del nombre
       if(!(filter_has_var(INPUT_POST,"nombre") &&
             (strlen(filter_input(INPUT_POST,"nombre")))>0)){
+        echo "<br>";
         echo "el nombre es obligatorio";
       } else {
         echo "<p>Nombre: ". $nombre ." </p>";
@@ -26,8 +26,20 @@
       if(!isset($apellido) || trim($apellido) != ""){
         echo "<p>Apellido ". $apellido ."</p>";
       } else {
+        echo "<br>";
         echo "el apellido es obligatorio";
       }
+      // validar checkbox, singular
+      if(isset($_POST["notificaciones"])) {
+        $notificaciones = $_POST["notificaciones"];
+        if($notificaciones == "on") {
+          echo "<br>";
+          echo "las notificaciones estan activadas";
+        } else { 
+          echo "<br>";
+          echo "las notificaciones estan desactivadas";
+        }
+      } 
       ?>
       </div>
 
