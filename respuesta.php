@@ -66,9 +66,18 @@
        } else if($area == "fs"){
           echo "Full Stack";
        } else {
-          echo "No haz elegido ninguna especializacón";
+          echo "No has elegido ninguna especializacón";
        }
+       // validar un raddio button
+        echo "<h2>Tipo de curso </h2>";
+        if(isset($_POST["opciones"])){
+          echo "<p>has elegido ". $_POST["opciones"] ." </P>";
+        }else {
+          echo "<br>no has elegido el tipo de curso";
+        }
       ?>
+
+
       </div>
 
 
