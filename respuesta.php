@@ -41,6 +41,10 @@
           }
         }
         // validar array de checkboxes
+        echo "<pre>";
+        echo var_dump($_POST);
+        echo "</pre>";
+
         echo "<h2>Cursos asignados</h2>";
         if(isset($_POST["curso"])){
           $cursos = $_POST["curso"];
@@ -49,10 +53,22 @@
               echo "<li>". $curso ." </li>";
             }
           echo "</ul>";
+        } else {
+          echo "ningun curso seleccionado";
         }
-      
+       // validar un select 
+       echo "<h2>Área de especialización</h2>";
+       $area = $_POST["area"];
+       if($area == "fe"){
+         echo "Front End";
+       }else if($area == "be"){
+          echo "Back End";
+       } else if($area == "fs"){
+          echo "Full Stack";
+       } else {
+          echo "No haz elegido ninguna especializacón";
+       }
       ?>
-
       </div>
 
 
