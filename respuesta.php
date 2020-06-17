@@ -75,8 +75,17 @@
         }else {
           echo "<br>no has elegido el tipo de curso";
         }
+        // Validando textarea
+        if(isset($_POST["mensaje"])){
+          $mensaje = $_POST["mensaje"];
+          if(strlen($mensaje)> 0 && trim($mensaje) != ""){
+            echo "<h2>Mensaje </h2>";
+            echo "<p>" . $mensaje . "</p>";
+          }else {
+            echo "no se envió ningún mensaje";
+          }
+        } 
       ?>
-
 
       </div>
 
